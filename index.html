@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Menentukan karakter encoding dokumen sebagai UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Mengatur tampilan untuk perangkat seluler -->
+    <title>Forgot Password</title>
+    <!-- Judul halaman -->
+    <!-- Tambahkan Font Awesome untuk ikon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif; /* Font untuk halaman */
+        background-color: #f0f0f0; /* Warna latar belakang halaman */
+        display: flex; /* Mengatur tata letak agar konten berada di tengah */
+        justify-content: center; /* Menyusun konten secara horizontal di tengah */
+        align-items: center; /* Menyusun konten secara vertikal di tengah */
+        height: 100vh; /* Menentukan tinggi halaman penuh viewport */
+        margin: 0; /* Menghilangkan margin default */
+      }
+      .container {
+        background-color: #fff; /* Warna latar belakang kontainer */
+        padding: 20px; /* Padding di dalam kontainer */
+        border-radius: 8px; /* Membulatkan sudut kontainer */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan di bawah kontainer */
+        width: 450px; /* Lebar tetap kontainer */
+        max-width: 90%; /* Lebar maksimum kontainer di layar kecil */
+      }
+      .container img {
+        display: block; /* Menampilkan gambar sebagai blok */
+        margin: 0 auto 20px; /* Menyusun gambar di tengah dan menambahkan margin bawah */
+        max-width: 65%; /* Menentukan lebar maksimum gambar */
+        height: auto; /* Mempertahankan rasio aspek gambar */
+      }
+      h2 {
+        text-align: center; /* Menyusun teks di tengah */
+        margin-bottom: 12px; /* Menambahkan margin bawah untuk jarak dengan elemen berikutnya */
+        font-size: 28px; /* Ukuran font untuk judul */
+        font-weight: bold; /* Membuat teks tebal */
+      }
+      .info {
+        font-size: 15px; /* Ukuran font untuk informasi */
+        color: #555; /* Warna teks */
+        text-align: center; /* Menyusun teks di tengah */
+        margin-bottom: 30px; /* Menambahkan margin bawah untuk jarak dengan elemen berikutnya */
+      }
+      input[type="email"] {
+        width: 100%; /* Lebar input sama dengan lebar kontainer */
+        padding: 15px; /* Padding di dalam input */
+        margin-bottom: 10px; /* Menambahkan margin bawah untuk jarak dengan elemen berikutnya */
+        border: 1px solid #ccc; /* Border input */
+        border-radius: 4px; /* Membulatkan sudut input */
+        box-sizing: border-box; /* Menghitung padding dan border dalam ukuran total */
+        font-size: 15px; /* Ukuran font di dalam input */
+      }
+      .error {
+        color: red; /* Warna teks pesan kesalahan */
+        font-size: 15px; /* Ukuran font pesan kesalahan */
+        margin-bottom: 20px; /* Menambahkan margin bawah untuk jarak dengan elemen berikutnya */
+        display: flex; /* Mengatur elemen kesalahan dengan flexbox */
+        align-items: center; /* Menyusun elemen kesalahan secara vertikal di tengah */
+        justify-content: center; /* Menyusun elemen kesalahan secara horizontal di tengah */
+        display: none; /* Menyembunyikan pesan kesalahan secara default */
+      }
+      .error i {
+        color: red; /* Warna ikon kesalahan */
+        margin-right: 8px; /* Menambahkan jarak antara ikon dan teks pesan kesalahan */
+        font-size: 16px; /* Ukuran ikon kesalahan */
+      }
+      form {
+        text-align: center; /* Mengatur konten form agar berada di tengah */
+      }
+      input[type="submit"] {
+        width: 100%; /* Lebar tombol sama dengan lebar kontainer */
+        background-color: #1746ab; /* Warna latar belakang tombol */
+        color: white; /* Warna teks tombol */
+        padding: 15px; /* Padding di dalam tombol */
+        border: none; /* Menghilangkan border default tombol */
+        border-radius: 20px; /* Membulatkan sudut tombol */
+        cursor: pointer; /* Menampilkan kursor pointer saat hover di atas tombol */
+        margin: 10px 0 5px 0; /* Menambahkan margin atas dan bawah tombol */
+        font-size: 15px; /* Ukuran font di dalam tombol */
+      }
+      input[type="submit"]:hover {
+        background-color: #0d3f6e; /* Warna latar belakang tombol saat hover */
+      }
+      .back-to-login {
+        text-align: center; /* Menyusun teks di tengah */
+        margin-top: 10px; /* Menambahkan margin atas untuk jarak dengan elemen sebelumnya */
+        font-size: 12px; /* Ukuran font untuk tautan */
+        color: #555; /* Warna teks tautan */
+      }
+      .back-to-login a {
+        color: #1746ab; /* Warna berbeda untuk teks "Login Page" */
+        text-decoration: none; /* Menghilangkan garis bawah tautan */
+        font-weight: bold; /* Membuat teks tautan tebal */
+      }
+      .back-to-login a:hover {
+        text-decoration: underline; /* Menambahkan garis bawah pada tautan saat hover */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Kontainer utama untuk semua konten -->
+      <img src="img/2.png" alt="Forgot Password" />
+      <!-- Gambar di atas form -->
+      <h2>Forgot Password?</h2>
+      <!-- Judul halaman -->
+      <form id="forgotPasswordForm" action="#" method="POST">
+        <!-- Form untuk input email -->
+        <div class="info">
+          Enter your email and we'll help you reset your password.
+          <!-- Informasi instruksi -->
+        </div>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
+        <!-- Input untuk email -->
+        <div class="error" id="emailError">
+          <!-- Elemen untuk menampilkan pesan kesalahan -->
+          <i class="fas fa-exclamation-circle"></i>
+          <!-- Ikon kesalahan -->
+          <span id="errorMessage"></span>
+          <!-- Teks pesan kesalahan -->
+        </div>
+        <input type="submit" value="Submit" />
+        <!-- Tombol kirim -->
+      </form>
+      <div class="back-to-login">
+        <!-- Tautan untuk kembali ke halaman login -->
+        Go back to <a href="login.html">Login Page</a>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("forgotPasswordForm")
+        .addEventListener("submit", function (event) {
+          var emailInput = document.getElementById("email");
+          var emailError = document.getElementById("emailError");
+          var errorMessage = document.getElementById("errorMessage");
+
+          // Reset pesan error sebelum validasi
+          emailError.style.display = "none";
+          errorMessage.textContent = "";
+
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          // Validasi email
+          if (!emailInput.value) {
+            // Jika input email kosong
+            event.preventDefault(); // Mencegah pengiriman form
+            errorMessage.textContent = "Email cannot be empty."; // Pesan kesalahan
+            emailError.style.display = "flex"; // Tampilkan pesan kesalahan
+            emailError.style.color = "red"; // Set warna teks menjadi merah
+            emailInput.focus(); // Fokus ke input email
+          } else if (!emailPattern.test(emailInput.value)) {
+            // Jika email tidak valid
+            event.preventDefault(); // Mencegah pengiriman form
+            errorMessage.textContent = "Please enter a valid email address."; // Pesan kesalahan
+            emailError.style.display = "flex"; // Tampilkan pesan kesalahan
+            emailError.style.color = "red"; // Set warna teks menjadi merah
+            emailInput.focus(); // Fokus ke input email
+          } else {
+            event.preventDefault(); // Menghentikan pengiriman form default
+            // Jika email valid, tampilkan pop-up dan arahkan ke halaman reset password
+            alert(
+              "Email is correct. You will be directed to the reset password page."
+            );
+            window.location.href = "reset_password.html"; // Arahkan pengguna ke halaman reset password
+          }
+        });
+    </script>
+  </body>
+</html>
