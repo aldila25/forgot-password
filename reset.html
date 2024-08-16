@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Valid</title>
+    <!-- Gaya dasar untuk mengatur tampilan halaman -->
+    <style>
+      body {
+        font-family: Arial, sans-serif; /* Mengatur font untuk seluruh halaman */
+        background-color: #ffffff; /* Warna latar belakang halaman */
+        display: flex;
+        justify-content: center; /* Mengatur konten agar berada di tengah secara horizontal */
+        align-items: center; /* Mengatur konten agar berada di tengah secara vertikal */
+        height: 100vh; /* Mengatur tinggi halaman untuk memenuhi seluruh layar */
+        margin: 0; /* Menghilangkan margin default pada body */
+      }
+      .container {
+        background-color: #598bba; /* Warna latar belakang kotak konten */
+        padding: 30px; /* Jarak dalam konten dari batas kotak */
+        border-radius: 10px; /* Membuat sudut kotak menjadi melengkung */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan di sekitar kotak */
+        text-align: center; /* Mengatur teks agar berada di tengah dalam kotak */
+        max-width: 450px; /* Mengatur lebar maksimal kotak menjadi lebih lebar */
+        width: 60%; /* Mengatur lebar kotak sesuai layar, dapat disesuaikan */
+      }
+      .container img {
+        max-width: 50%; /* Mengatur lebar maksimal gambar sesuai lebar kontainer */
+        height: auto; /* Mengatur tinggi gambar secara otomatis sesuai rasio aslinya */
+        margin-bottom: 15px; /* Jarak bawah gambar dari elemen lain */
+      }
+      .container h1 {
+        color: #ffffff; /* Warna biru untuk judul, menunjukkan pesan penting */
+        font-size: 28px; /* Ukuran font untuk judul */
+        margin-bottom: 20px; /* Jarak bawah judul dari elemen lain */
+      }
+      .container p {
+        font-size: 15px; /* Ukuran font untuk paragraf */
+        color: #ffffff; /* Warna teks paragraf */
+        margin-bottom: 30px; /* Jarak bawah paragraf dari elemen lain */
+      }
+      .btn {
+        background-color: #1746ab; /* Warna latar belakang tombol */
+        color: white; /* Warna teks tombol */
+        padding: 10px 20px; /* Jarak dalam tombol dari teks */
+        text-decoration: none; /* Menghilangkan garis bawah pada teks tautan */
+        border-radius: 5px; /* Membuat sudut tombol melengkung */
+        font-size: 14px; /* Ukuran font untuk tombol */
+      }
+      .btn:hover {
+        background-color: #598bba; /* Warna latar belakang tombol saat hover (penunjuk di atasnya) */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="img/2.png" alt="Deskripsi gambar" />
+      <h1>Email Succesful</h1>
+      <!-- Judul halaman menunjukkan keberhasilan -->
+      <p>
+        Thank You! Your email is valid. You will be redirected to the password
+        reset page.
+      </p>
+      <!-- Pesan tambahan untuk pengguna -->
+      <a href="reset_password.html" class="btn">Reset Password</a>
+      <!-- Tombol untuk melanjutkan ke halaman reset password -->
+    </div>
+  </body>
+</html>
